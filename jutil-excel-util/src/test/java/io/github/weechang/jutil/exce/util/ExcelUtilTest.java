@@ -2,10 +2,12 @@ package io.github.weechang.jutil.exce.util;
 
 
 import io.github.weechang.jutil.exce.util.pojo.Student;
+import net.coobird.thumbnailator.Thumbnails;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.Test;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -62,6 +64,14 @@ public class ExcelUtilTest {
         for (Student student : students) {
             System.out.println(student.toString());
         }
+    }
+
+    @Test
+    public void img() throws IOException {
+        Thumbnails.of("E:\\400079472_banner.jpg")
+                .scale(1f)
+                .outputQuality(0.6f)
+                .toFile("E:\\test.jpg");
     }
 
 
